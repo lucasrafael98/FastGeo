@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+
+    script(src="https://d3js.org/d3.v5.min.js")
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js")
+
+    link(rel='stylesheet', href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css")
+    link(rel='stylesheet', href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel='stylesheet', href='./stylesheets/style.css')
+
+    script(type='text/javascript' src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js")
+    script(type='text/javascript' src="./vendor/mapbox-gl-framerate.min.js")
+    script(type='text/javascript' src="./javascripts/interaction.js")
+    script(type='text/javascript' src="./javascripts/style.js")
+    script(type='text/javascript' src="./javascripts/map.js")
+    script(type='text/javascript' src="./javascripts/filter.js")
+    script(type='text/javascript' src="./javascripts/animation.js")
+    script(type='text/javascript' src="./javascripts/tooltips.js")
+    
+  body
+    block content

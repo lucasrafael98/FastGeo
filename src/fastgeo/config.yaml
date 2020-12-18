@@ -1,0 +1,78 @@
+# Folder to use when loading a simulation state.
+resumeFolder: ""
+
+# Number of generic periods (post-ongoing and pre-grid).
+# The recent period is the only "generic" period.
+genericCount: 1
+
+# How old a track needs to be to exit each EB + generic period.
+# Expressed in minutes. (last element is irrelevant)
+streamGenericTimeDiffs: [30]
+
+# Size of bins in generic periods.
+# Expressed in minutes.
+streamTimeBinSizes: [5]
+
+# Display Methods for each generic period.
+# 0 = raw
+# 1 = adjacencies adjusted
+# 2 = spatial heatmap
+streamDisplayMethods: [1]
+
+# Display Method for grid period.
+# 0 = spatial heatmap
+# 1 = cluster heatmap
+gridDisplayMethod: 0
+
+# Time to start the stream simulation. 
+# Adjust this as necessary for your dataset.
+# Format: "yyyy-mm-dd hh:mm:ss"
+# Porto dataset: https://www.kaggle.com/c/pkdd-15-predict-taxi-service-trajectory-i/rules
+streamStartTime: "2013-07-01 01:01:00"
+
+# Simulation speed ratio.
+# It will fetch the given number of seconds each real-time second. 
+streamRatio: 300
+
+# Upper limit for the time which any simulation step will process.
+# Expressed in seconds.
+streamDataCap: 300
+
+# Minimum time that a simulation iteration should take. Expressed in milliseconds.
+# If an iteration took less time than this, it will msleep() for remaining time.
+streamMinSimTime: 1000
+
+# Above this threshold, any line will be removed. 
+# Expressed in km/h.
+unrealisticVelocityThreshold: 130
+
+# Time to cut off an ongoing track and send it to recent.
+# Expressed in seconds.
+ongoingTimeCutoff: 1800
+
+# Time difference required between two near points to count as a stop event.
+# Expressed in seconds.
+stopEventTimeDiff: 60
+
+# Maximum distance between points to check for stop events.
+# Expressed in meters.
+stopEventDistDiff: 100
+
+# Maximum distance to consider bundling trajectories.
+# Expressed in meters.
+edgeBundlingDistThreshold: 30
+
+# Maximum angle difference allowed between trajectories to bundle.
+# Expressed in angles (trajectories between -x and x will be accepted).
+edgeBundlingAngleDiff: 15
+
+# Minimum distance to create a new segment.
+# Expressed in meters.
+edgeBundlingMinDist: 1
+
+# Size of each grid bin/square.
+# Expressed in meters.
+gridResolution: 15
+
+# Percentage of "outliers" required to reform the grid.
+gridRebinThreshold: 2

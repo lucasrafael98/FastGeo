@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    div(id="map")
+    
+    div(id="sidebar")
+        ul(id="sidebar-tabs")
+            li
+                a(href="#home" class="sidebar-btn")
+                    i(class="fa fa-home")
+            //- li
+            //-     a(href="#settings" class="sidebar-btn")
+            //-         i(class="fa fa-cog")
+            li
+                a(href="#search" class="sidebar-btn")
+                    i(class="fa fa-filter")
+            li
+                a(href="#color" class="sidebar-btn")
+                    i(class="fa fa-question-circle-o")
+
+        div(id="sidebar-content")
+            div(class="sidebar-pane" id="home")
+                h1 FastGeo
+                span(class="sidebar-pane-span") Welcome to FastGeo.
+            //- div(class="sidebar-pane" id="settings")
+            //-     h1 Settings
+                //- div(class="setting-btns")
+                //-     button(onclick="changeViz()") Toggle velocity/recency
+            div(class="sidebar-pane" id="search")
+                h1 Filter
+                input(type="text" id="filter-search" placeholder="Filter a specific taxi ID..." onkeyup="filterId()" style="padding-right: 0%;")
+                div(id="filter-boxes")
+                    input(type="checkbox" id="temp" name="temp" value="temp")
+                    label(for="temp") temp
+
+            div(class="sidebar-pane" id="color")
+                h1 Colors
+                div(id="ongoing-span" class="color-scale-square" title="Tracks which are currently moving.")
+                    span(class="color-span") Ongoing
+                div(id="recent-span" class="color-scale-square" title="Tracks which stopped recently.")
+                    span(class="color-span") Recent
+                    span(class="color-span" id="min-recent") 0
+                    span(class="color-span" id="max-recent" style="") 10
+                div(id="history-span" class="color-scale-square" title="Tracks which stopped a while ago.")
+                    span(class="color-span") History
+                    span(class="color-span" id="min-history") 0
+                    span(class="color-span" id="max-history") 10

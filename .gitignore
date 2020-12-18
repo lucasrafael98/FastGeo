@@ -1,0 +1,5 @@
+src/fastgeo/node_modules/*
+src/fastgeo/npm-debug.log
+src/fastgeo/data
+.vscode
+*.pyc
